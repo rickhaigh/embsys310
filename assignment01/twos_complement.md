@@ -1,6 +1,6 @@
 # Why use two's complement to represent negative numbers?
 
-Two's complement is the method used by most systems to represent negative numbers.  This is because two's complement lets us represent, add, subtract and multiply negative and positive numbers with simple hardware.  It eliminates the need to inspect the sign of the numbers.  Conversion from binary to two's complement is also easy: flip all the bits and add one.  Two's complement also includes just a single 0.  A number and its two's complement added together equals 2^N.  For example 011 + 101 = 1000 (2^3)
+Two's complement is the method used by most systems to represent negative numbers.  This is because two's complement lets us represent, add, subtract and multiply negative and positive numbers with simple hardware.  It eliminates the need to inspect the sign of the numbers.  Conversion from binary to two's complement is also easy: flip all the bits and add one.  Two's complement also includes just a single 0.  A number and its two's complement added together equals 2<sup>N</sup> .  For example 011 + 101 = 1000 (2<sup>3</sup>)
 
 Three-bit signed integers
 -------------------------
