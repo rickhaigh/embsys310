@@ -3,6 +3,7 @@
 
 The garage door automation devices currently on the market are very interesting.  They provide functionality to support convenience, security and accessability for the biggest door in the home. 
 
+### Development Challenges
 * Reliability of wireless coverage
 * What happens when wifi coverage or internet connectivity is not ideal?  
 * Responsiveness of commands and data between device and smartphone
