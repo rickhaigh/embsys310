@@ -12,7 +12,9 @@ b) What is the value of the “counter” in the “Registers” window?
 c) Please note down if the N and/or V flags are set in the APSR register. And explain why.
 
 **N = 1 (Negative)**
+
 **V = 1 (Overflow)**
+
 **The reason the N and V flags are set is that we went from the largest positive value of 0x7FFFFFFF and added 1 which caused the overflow and set the negative flag, making the number the largest negative number possible**
 
 ## 2. If your write all Fs (0XFFFFFFFF) in the Register value for “counter” then step thru the program once to increment “counter”
@@ -23,8 +25,10 @@ a) What happens to the value of “counter” in the “Locals” window?
 b) Please note down if the N and/or V flags are set in the APSR register. And explain why.
 
 **N = 0**
+
 **V = 0**
-**Neither N or V flags are set after incrementing from -1 to 0 The N flag is not set because the value is no longer negative and the V flag is not set because there was not an overflow during the addition
+
+**Neither N or V flags are set after incrementing from -1 to 0 The N flag is not set because the value is no longer negative and the V flag is not set because there was not an overflow during the addition**
 
 ## 3. Change the “counter” variable type in your code to “unsigned int”. Inject the values “0x7FFFFFFF” then step thru the program to increment the “counter” once:
 a) What is the value of “counter” in the “Locals” window after incrementing for each value?
@@ -34,7 +38,9 @@ a) What is the value of “counter” in the “Locals” window after increment
 b) Please note down if the N and/or V flags are set in the APSR register. And explain why.
 
 **N = 1**
+
 **V = 1**
+
 **Both the N and V flags are set.  It does not appear that IAR is checking the type of int and assumes it is a signed variable.**
 
 ## 4. Change the “counter” variable type in your code to “unsigned”. Inject the values “0xFFFFFFFF” then step thru the program to increment the “counter” once:
@@ -45,7 +51,9 @@ a) What is the value of “counter” in the “Locals” window after increment
 b) Please note down if the N and/or V flags are set in the APSR register. And explain why.
 
 **N = 0**
+
 **V = 0**
+
 **Both the N and V flags are set.  The value is 0, so it is not negative (N=0) and the calculation did not result in an overflow (V=0)**
 
 ## 5. Move the “counter’ variable outside of main (at the top of the file):
