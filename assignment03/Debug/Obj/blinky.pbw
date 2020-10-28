@@ -1,0 +1,114 @@
+[
+  {
+    "ID": "c:main.c@10@macro@RCC_BASE",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "RCC_BASE",
+    "location": {
+      "column": "9",
+      "line": "2",
+      "path": "C:\\repo\\embsys310\\assignment03\\main.c"
+    },
+    "name": "RCC_BASE",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:main.c@39@macro@GPIOA_BASE",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "GPIOA_BASE",
+    "location": {
+      "column": "9",
+      "line": "3",
+      "path": "C:\\repo\\embsys310\\assignment03\\main.c"
+    },
+    "name": "GPIOA_BASE",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:main.c@70@macro@RCC_AHB2ENR",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "RCC_AHB2ENR",
+    "location": {
+      "column": "9",
+      "line": "4",
+      "path": "C:\\repo\\embsys310\\assignment03\\main.c"
+    },
+    "name": "RCC_AHB2ENR",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:main.c@129@macro@GPIOA_MODER",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "GPIOA_MODER",
+    "location": {
+      "column": "9",
+      "line": "5",
+      "path": "C:\\repo\\embsys310\\assignment03\\main.c"
+    },
+    "name": "GPIOA_MODER",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:main.c@190@macro@GPIOA_ODR",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "GPIOA_ODR",
+    "location": {
+      "column": "9",
+      "line": "6",
+      "path": "C:\\repo\\embsys310\\assignment03\\main.c"
+    },
+    "name": "GPIOA_ODR",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:main.c@251@macro@BIT5",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "BIT5",
+    "location": {
+      "column": "9",
+      "line": "8",
+      "path": "C:\\repo\\embsys310\\assignment03\\main.c"
+    },
+    "name": "BIT5",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@main",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "int main(void)",
+    "location": {
+      "column": "5",
+      "line": "10",
+      "path": "C:\\repo\\embsys310\\assignment03\\main.c"
+    },
+    "name": "main",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:main.c@285@F@main@counter",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "counter",
+    "location": {
+      "column": "18",
+      "line": "12",
+      "path": "C:\\repo\\embsys310\\assignment03\\main.c"
+    },
+    "name": "counter",
+    "origin": "project_file",
+    "scope": null
+  }
+]
