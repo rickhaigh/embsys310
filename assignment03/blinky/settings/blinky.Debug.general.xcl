@@ -2,7 +2,7 @@
 
 "C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.4\arm\bin\armstlink2.dll" 
 
-"C:\repo\embsys310\assignment03\Debug\Exe\blinky.out" 
+"C:\repo\embsys310\assignment03\blinky\Debug\Exe\blinky.out" 
 
 --plugin="C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.4\arm\bin\armbat.dll" 
 

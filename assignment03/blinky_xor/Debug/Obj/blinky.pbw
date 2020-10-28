@@ -7,7 +7,7 @@
     "location": {
       "column": "9",
       "line": "2",
-      "path": "C:\\repo\\embsys310\\assignment03\\main.c"
+      "path": "C:\\repo\\embsys310\\assignment03\\blinky_xor\\main.c"
     },
     "name": "RCC_BASE",
     "origin": "project_file",
@@ -21,7 +21,7 @@
     "location": {
       "column": "9",
       "line": "3",
-      "path": "C:\\repo\\embsys310\\assignment03\\main.c"
+      "path": "C:\\repo\\embsys310\\assignment03\\blinky_xor\\main.c"
     },
     "name": "GPIOA_BASE",
     "origin": "project_file",
@@ -35,7 +35,7 @@
     "location": {
       "column": "9",
       "line": "4",
-      "path": "C:\\repo\\embsys310\\assignment03\\main.c"
+      "path": "C:\\repo\\embsys310\\assignment03\\blinky_xor\\main.c"
     },
     "name": "RCC_AHB2ENR",
     "origin": "project_file",
@@ -49,7 +49,7 @@
     "location": {
       "column": "9",
       "line": "5",
-      "path": "C:\\repo\\embsys310\\assignment03\\main.c"
+      "path": "C:\\repo\\embsys310\\assignment03\\blinky_xor\\main.c"
     },
     "name": "GPIOA_MODER",
     "origin": "project_file",
@@ -63,7 +63,7 @@
     "location": {
       "column": "9",
       "line": "6",
-      "path": "C:\\repo\\embsys310\\assignment03\\main.c"
+      "path": "C:\\repo\\embsys310\\assignment03\\blinky_xor\\main.c"
     },
     "name": "GPIOA_ODR",
     "origin": "project_file",
@@ -77,7 +77,7 @@
     "location": {
       "column": "9",
       "line": "8",
-      "path": "C:\\repo\\embsys310\\assignment03\\main.c"
+      "path": "C:\\repo\\embsys310\\assignment03\\blinky_xor\\main.c"
     },
     "name": "BIT5",
     "origin": "project_file",
@@ -91,7 +91,7 @@
     "location": {
       "column": "5",
       "line": "10",
-      "path": "C:\\repo\\embsys310\\assignment03\\main.c"
+      "path": "C:\\repo\\embsys310\\assignment03\\blinky_xor\\main.c"
     },
     "name": "main",
     "origin": "project_file",
@@ -105,7 +105,7 @@
     "location": {
       "column": "18",
       "line": "12",
-      "path": "C:\\repo\\embsys310\\assignment03\\main.c"
+      "path": "C:\\repo\\embsys310\\assignment03\\blinky_xor\\main.c"
     },
     "name": "counter",
     "origin": "project_file",
