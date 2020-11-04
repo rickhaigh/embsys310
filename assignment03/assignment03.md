@@ -29,6 +29,7 @@ b. Who developed Morse Code?
 **video of morse code on LED**
 
 **/assignment03/assignment03_morse_code.MOV**
+https://youtu.be/XXQdULSHz00
 
 5. Use the STM32CubeMx tool to generate the boiler plate code for controlling LED1 & LED2
 
