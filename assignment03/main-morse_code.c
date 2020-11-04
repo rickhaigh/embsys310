@@ -98,7 +98,7 @@ int main()
     
     RCC_AHB2ENR |= 0x1; // RCC_AHB2ENR: Enable clock to GPIOA
 
-    GPIOA_MODER = 0xABFFF7FF; // GPIOA_MODER: Set GPIOA 5 to output
+    GPIOA_MODER &= 0xFFFFF7FF; // GPIOA_MODER: Set GPIOA 5 to output
     
     for(j=0;j<name_len; j++) {
         char c = name[j];
