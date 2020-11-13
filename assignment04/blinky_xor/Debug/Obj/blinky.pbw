@@ -1,0 +1,156 @@
+[
+  {
+    "ID": "c:main.c@10@macro@RCC_BASE",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "RCC_BASE",
+    "location": {
+      "column": "9",
+      "line": "2",
+      "path": "C:\\repo\\embsys310\\assignment04\\blinky_xor\\main.c"
+    },
+    "name": "RCC_BASE",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:main.c@39@macro@RCC_BASE_BB",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "RCC_BASE_BB",
+    "location": {
+      "column": "9",
+      "line": "3",
+      "path": "C:\\repo\\embsys310\\assignment04\\blinky_xor\\main.c"
+    },
+    "name": "RCC_BASE_BB",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:main.c@71@macro@RCC_BASE_BB_OFFSET",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "RCC_BASE_BB_OFFSET",
+    "location": {
+      "column": "9",
+      "line": "4",
+      "path": "C:\\repo\\embsys310\\assignment04\\blinky_xor\\main.c"
+    },
+    "name": "RCC_BASE_BB_OFFSET",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:main.c@116@macro@GPIOA_BASE",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "GPIOA_BASE",
+    "location": {
+      "column": "9",
+      "line": "5",
+      "path": "C:\\repo\\embsys310\\assignment04\\blinky_xor\\main.c"
+    },
+    "name": "GPIOA_BASE",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:main.c@147@macro@RCC_AHB2ENR",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "RCC_AHB2ENR",
+    "location": {
+      "column": "9",
+      "line": "6",
+      "path": "C:\\repo\\embsys310\\assignment04\\blinky_xor\\main.c"
+    },
+    "name": "RCC_AHB2ENR",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:main.c@206@macro@GPIOA_MODER",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "GPIOA_MODER",
+    "location": {
+      "column": "9",
+      "line": "7",
+      "path": "C:\\repo\\embsys310\\assignment04\\blinky_xor\\main.c"
+    },
+    "name": "GPIOA_MODER",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:main.c@267@macro@GPIOA_ODR",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "GPIOA_ODR",
+    "location": {
+      "column": "9",
+      "line": "8",
+      "path": "C:\\repo\\embsys310\\assignment04\\blinky_xor\\main.c"
+    },
+    "name": "GPIOA_ODR",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:main.c@326@macro@RCC_AHB2ENR_BB",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "RCC_AHB2ENR_BB",
+    "location": {
+      "column": "9",
+      "line": "9",
+      "path": "C:\\repo\\embsys310\\assignment04\\blinky_xor\\main.c"
+    },
+    "name": "RCC_AHB2ENR_BB",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:main.c@419@macro@BIT5",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "BIT5",
+    "location": {
+      "column": "9",
+      "line": "11",
+      "path": "C:\\repo\\embsys310\\assignment04\\blinky_xor\\main.c"
+    },
+    "name": "BIT5",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@main",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "int main(void)",
+    "location": {
+      "column": "5",
+      "line": "13",
+      "path": "C:\\repo\\embsys310\\assignment04\\blinky_xor\\main.c"
+    },
+    "name": "main",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:main.c@453@F@main@counter",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "counter",
+    "location": {
+      "column": "18",
+      "line": "15",
+      "path": "C:\\repo\\embsys310\\assignment04\\blinky_xor\\main.c"
+    },
+    "name": "counter",
+    "origin": "project_file",
+    "scope": null
+  }
+]
