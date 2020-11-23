@@ -69,4 +69,4 @@ o Turn in answers to questions in markdown file format.
 
 - Submit a link to your GitHub repo assignment:
 
-o Ex: “https://github.com/<account_id>/embsys300/assignment05”
+o https://github.com/rickhaigh/embsys310/tree/main/assignment05
