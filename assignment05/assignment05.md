@@ -2,13 +2,18 @@
 
 ##1. Create a function in “C” that allows swapping of two pointers.
 
-    a. Explain what the “main” function does in order to setup the input arguments prior to calling the swap_pointer() function?
-        Two pointers are declared and initialized to point to two variables. The address of the pointers are passed to the swap_pointers function.  The two arguments (pointers to integers) are stored in R0 and R1
+    a. Explain what the “main” function does in order to setup the input arguments prior to 
+    calling the swap_pointer() function?
+        Two pointers are declared and initialized to point to two variables. The address of 
+        the pointers are passed to the swap_pointers function.  The two arguments (pointers to integers) 
+        are stored in R0 and R1
         
     b. What are the values in R0 & R1 when swap_pointer() is called?
-        R0 and R1 are storing the argument values for the swap_ptrs functions (addresses of the pointers we are swapping)
+        R0 and R1 are storing the argument values for the swap_ptrs functions (addresses of 
+        the pointers we are swapping)
 
-    c. Share a screen shot of the local variables inside of “main” after the function swap_pointer() returns showing the values of the pointers and what they are pointing to (similar to the picture below).
+    c. Share a screen shot of the local variables inside of “main” after the function swap_pointer() 
+    returns showing the values of the pointers and what they are pointing to (similar to the picture below).
 ![](swap_pointers.png)
 
 ##2. Create a new file divAsm.s and add the file to the same HelloWorld project above.
@@ -23,7 +28,8 @@
 
     e. Invoke divAsm() inside of your main function in main.c
 
-    f. Run your program on the board and capture a snapshot image of the output from TeraTerm showing the result of the divAsm.
+    f. Run your program on the board and capture a snapshot image of the output from TeraTerm showing the 
+    result of the divAsm.
 ![](div2_asm_tt_out.png)
 
 ##3. Implement a swap function in assembly and call it “swapCharsAsm”:
@@ -41,7 +47,8 @@
 
     b. Invoke swapPointersAsm() from your main function main.c
 
-    c. Run your program on the board and capture a snapshot image of the output from TeraTerm showing the result of the swapPointersAsm() subroutine.
+    c. Run your program on the board and capture a snapshot image of the output from TeraTerm showing the 
+    result of the swapPointersAsm() subroutine.
 ![](swapPointersAsm_tt_output.png)
 
 What to turn in and how:
