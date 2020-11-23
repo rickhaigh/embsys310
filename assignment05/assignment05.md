@@ -5,7 +5,7 @@
     a. Explain what the “main” function does in order to setup the input arguments prior to 
     calling the swap_pointer() function?
         Two pointers are declared and initialized to point to two variables. The address of 
-        the pointers are passed to the swap_pointers function.  The two arguments (pointers to integers) 
+        the pointers are passed to the swap_pointers function.  The two arguments (pointers to pointers) 
         are stored in R0 and R1
         
     b. What are the values in R0 & R1 when swap_pointer() is called?
