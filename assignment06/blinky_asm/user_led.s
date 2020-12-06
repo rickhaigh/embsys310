@@ -59,7 +59,7 @@ control_user_led1
     PUSH {R0, R1, LR}               ; Save input args and LR
     // Led control
     LDR R2, =(GPIOA_BASE+GPIOA_ODR) ; Load GPIOA_BASE and offset (GPIOA_ODR)
-    LSL R0, #5                      ; Shift either 1 or 0 to bit 5 position
+    LSL R0, R0, #5                      ; Shift either 1 or 0 to bit 5 position
     STR R0, [R2]                    ; Set output bit to desired setting 0 or 1
 
     // delay
