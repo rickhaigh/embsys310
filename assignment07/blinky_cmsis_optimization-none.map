@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR ELF Linker V8.50.6.265/W32 for ARM                  07/Dec/2020  13:47:26
+# IAR ELF Linker V8.50.6.265/W32 for ARM                  07/Dec/2020  13:19:30
 # Copyright 2007-2020 IAR Systems AB.
 #
 #    Output file  =
@@ -8,7 +8,7 @@
 #    Map file     =
 #        C:\repo\embsys310\assignment07\blinky_cmsis\Debug\List\blinky_cmsis.map
 #    Command line =
-#        -f C:\Users\test\AppData\Local\Temp\EW9E40.tmp
+#        -f C:\Users\test\AppData\Local\Temp\EWCB5.tmp
 #        (C:\repo\embsys310\assignment07\blinky_cmsis\Debug\Obj\delay.o
 #        C:\repo\embsys310\assignment07\blinky_cmsis\Debug\Obj\main.o
 #        C:\repo\embsys310\assignment07\blinky_cmsis\Debug\Obj\startup_stm32l475xx.o
@@ -17,20 +17,11 @@
 #        --redirect _Printf=_PrintfFullNoMb --redirect _Scanf=_ScanfFullNoMb
 #        --map
 #        C:\repo\embsys310\assignment07\blinky_cmsis\Debug\List\blinky_cmsis.map
-#        --config C:\repo\embsys310\assignment07\blinky_cmsis\blinky_cmsis.icf
-#        --semihosting --entry __iar_program_start --vfe --enable_stack_usage
-#        --text_out locale)
+#        --config "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        8.4\arm\config\linker\ST\stm32l475xG.icf" --semihosting --entry
+#        __iar_program_start --vfe --text_out locale)
 #
 ###############################################################################
-
-*******************************************************************************
-*** MESSAGES
-***
-
-Warning[Ls015]: [stack usage analysis] at least one function appears to be
-          uncalled. Example: "SysTick_Handler". A complete list of uncalled
-          functions is in the map file.
-
 
 *******************************************************************************
 *** RUNTIME MODEL ATTRIBUTES
@@ -57,7 +48,7 @@ was not specified.
 "A0":  place at address 0x800'0000 { ro section .intvec };
 "P1":  place in [from 0x0 to 0x0] |
                 [from 0x800'0000 to 0x80f'ffff] { ro };
-define block CSTACK with size = 296, alignment = 8 { };
+define block CSTACK with size = 8K, alignment = 8 { };
 define block PROC_STACK with size = 0, alignment = 8 { };
 define block HEAP with size = 8K, alignment = 8 { };
 "P3":  place in [from 0x2000'0000 to 0x2001'7fff] {
@@ -70,37 +61,37 @@ No sections matched the following patterns:
   section .textrw                     in "P4"
 
 
-  Section          Kind         Address   Size  Object
-  -------          ----         -------   ----  ------
-"A0":                                     0x40
-  .intvec          const     0x800'0000   0x40  startup_stm32l475xx.o [1]
-                           - 0x800'0040   0x40
+  Section          Kind         Address    Size  Object
+  -------          ----         -------    ----  ------
+"A0":                                      0x40
+  .intvec          const     0x800'0000    0x40  startup_stm32l475xx.o [1]
+                           - 0x800'0040    0x40
 
-"P1":                                    0x18a
-  .text            ro code   0x800'0040   0x78  main.o [1]
-  .text            ro code   0x800'00b8   0x14  delay.o [1]
-  .text            ro code   0x800'00cc   0x3a  zero_init3.o [4]
-  .text            ro code   0x800'0108   0x28  data_init.o [4]
-  .text            ro code   0x800'0130   0x22  fpinit_M.o [3]
-  .iar.init_table  const     0x800'0154   0x10  - Linker created -
-  .text            ro code   0x800'0164   0x1e  cmain.o [4]
-  .text            ro code   0x800'0182    0x4  low_level_init.o [2]
-  .text            ro code   0x800'0186    0x4  exit.o [2]
-  .text            ro code   0x800'018c    0xa  cexit.o [4]
-  .text            ro code   0x800'0198   0x14  exit.o [5]
-  .text            ro code   0x800'01ac   0x12  startup_stm32l475xx.o [1]
-  .text            ro code   0x800'01be    0xc  cstartup_M.o [4]
-  .rodata          const     0x800'01ca    0x0  zero_init3.o [4]
-                           - 0x800'01ca  0x18a
+"P1":                                     0x18a
+  .text            ro code   0x800'0040    0x78  main.o [1]
+  .text            ro code   0x800'00b8    0x14  delay.o [1]
+  .text            ro code   0x800'00cc    0x3a  zero_init3.o [4]
+  .text            ro code   0x800'0108    0x28  data_init.o [4]
+  .text            ro code   0x800'0130    0x22  fpinit_M.o [3]
+  .iar.init_table  const     0x800'0154    0x10  - Linker created -
+  .text            ro code   0x800'0164    0x1e  cmain.o [4]
+  .text            ro code   0x800'0182     0x4  low_level_init.o [2]
+  .text            ro code   0x800'0186     0x4  exit.o [2]
+  .text            ro code   0x800'018c     0xa  cexit.o [4]
+  .text            ro code   0x800'0198    0x14  exit.o [5]
+  .text            ro code   0x800'01ac    0x12  startup_stm32l475xx.o [1]
+  .text            ro code   0x800'01be     0xc  cstartup_M.o [4]
+  .rodata          const     0x800'01ca     0x0  zero_init3.o [4]
+                           - 0x800'01ca   0x18a
 
-"P3", part 1 of 2:                         0x4
-  .bss             zero     0x2000'0000    0x4  main.o [1]
-                          - 0x2000'0004    0x4
+"P3", part 1 of 2:                          0x4
+  .bss             zero     0x2000'0000     0x4  main.o [1]
+                          - 0x2000'0004     0x4
 
-"P3", part 2 of 2:                       0x128
-  CSTACK                    0x2000'0008  0x128  <Block>
-    CSTACK         uninit   0x2000'0008  0x128  <Block tail>
-                          - 0x2000'0130  0x128
+"P3", part 2 of 2:                       0x2000
+  CSTACK                    0x2000'0008  0x2000  <Block>
+    CSTACK         uninit   0x2000'0008  0x2000  <Block tail>
+                          - 0x2000'2008  0x2000
 
 Unused ranges:
 
@@ -109,7 +100,7 @@ Unused ranges:
           0x0          0x0       0x1
    0x800'01ca   0x80f'ffff  0xf'fe36
   0x2000'0004  0x2000'0007       0x4
-  0x2000'0130  0x2001'7fff  0x1'7ed0
+  0x2000'2008  0x2001'7fff  0x1'5ff8
 
 
 *******************************************************************************
@@ -122,69 +113,6 @@ Zero (__iar_zero_init3)
     1 destination range, total size 0x4:
           0x2000'0000   0x4
 
-
-*******************************************************************************
-*** STACK USAGE
-***
-
-  Call Graph Root Category  Max Use  Total Use
-  ------------------------  -------  ---------
-  Program entry                 16         16
-  Uncalled function              8          8
-
-
-Program entry
-  "__iar_program_start": 0x800'01bf
-
-  Maximum call chain                               16  bytes
-
-    "__iar_program_start"                           0
-    "__cmain"                                       0
-    "__iar_data_init3"                              8
-    "__iar_zero_init3"                              8
-
-Uncalled function
-  "SysTick_Handler": 0x800'008d
-
-  Maximum call chain                                0  bytes
-
-    "SysTick_Handler"                               0
-
-Uncalled function
-  "BusFault_Handler": 0x800'01b9
-
-  Maximum call chain                                0  bytes
-
-    "BusFault_Handler"                              0
-
-Uncalled function
-  "HardFault_Handler": 0x800'01af
-
-  Maximum call chain                                8  bytes
-
-    "HardFault_Handler"                             8
-    "Default_Handler"                               0
-
-Uncalled function
-  "MemManage_Handler": 0x800'01b7
-
-  Maximum call chain                                0  bytes
-
-    "MemManage_Handler"                             0
-
-Uncalled function
-  "NMI_Handler": 0x800'01ad
-
-  Maximum call chain                                0  bytes
-
-    "NMI_Handler"                                   0
-
-Uncalled function
-  "UsageFault_Handler": 0x800'01bb
-
-  Maximum call chain                                0  bytes
-
-    "UsageFault_Handler"                            0
 
 
 *******************************************************************************
@@ -230,9 +158,9 @@ shb_l.a: [5]
     Total:                      20
 
     Gaps                         6        2
-    Linker created                       16      296
+    Linker created                       16    8'192
 ----------------------------------------------------
-    Grand Total:               376       82      300
+    Grand Total:               376       82    8'196
 
 
 *******************************************************************************
@@ -246,7 +174,7 @@ Entry                       Address  Size  Type      Object
 ?main                    0x800'0165        Code  Gb  cmain.o [4]
 BusFault_Handler         0x800'01b9   0x2  Code  Gb  startup_stm32l475xx.o [1]
 CSTACK$$Base            0x2000'0008         --   Gb  - Linker created -
-CSTACK$$Limit           0x2000'0130         --   Gb  - Linker created -
+CSTACK$$Limit           0x2000'2008         --   Gb  - Linker created -
 Default_Handler          0x800'01bd   0x2  Code  Gb  startup_stm32l475xx.o [1]
 HardFault_Handler        0x800'01af   0x8  Code  Gb  startup_stm32l475xx.o [1]
 MemManage_Handler        0x800'01b7   0x2  Code  Gb  startup_stm32l475xx.o [1]
@@ -279,9 +207,9 @@ main                     0x800'0041  0x36  Code  Gb  main.o [1]
 [4] = rt7M_tl.a
 [5] = shb_l.a
 
-  376 bytes of readonly  code memory
-   82 bytes of readonly  data memory
-  300 bytes of readwrite data memory
+    376 bytes of readonly  code memory
+     82 bytes of readonly  data memory
+  8'196 bytes of readwrite data memory
 
 Errors: none
-Warnings: 1
+Warnings: none

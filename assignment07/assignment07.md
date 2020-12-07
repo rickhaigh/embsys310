@@ -47,9 +47,9 @@
 
 3. Bonus: Is there anything that can be done to optimize the usage of ROM or RAM resources? Explain any options.
    
-   **Reducing the stack size appears to be a practical way to reduce ram usage.  Reducing worked fine at 64bytes, but became flaky at 32bytes**
+   **Reducing the stack size appears to be a practical way to reduce ram usage.  Reducing worked at 64bytes sometimes, but became flaky at 32bytes.  In the end 128bytes seems to work without ending up in the default handler.  The IAR stack analysis just shows 24bytes of stack usage, so I am not sure why 32 and 64 bytes does not work -- see assignment07/blinky_cmsis_stack_usage.map**
 
-   **Increasing optimization did not appear to have any impact on ram usage, but did slightly change ROM usage**
+   **Increasing optimization did not appear to have any impact on ram usage, but did slightly reduce ROM(code) usage from 376 bytes to 346 bytes.**
 ## What to turn in and how:
 - Check in all your homework in your repo under the folder “assignment07”.
 - Your folder should contain the following:
@@ -63,6 +63,8 @@
     **delay.h & delay.c**
 
     **startup_stm32l475xx.c** 
+
+    **multiple *.map files showing differences between optomization levels, including one that analyzed the stack**
 
     o Turn in answers to questions in markdown file format.
     **assignment07/assignment07.md**
