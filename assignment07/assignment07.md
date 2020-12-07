@@ -43,11 +43,13 @@
 
     d. What part of your program is using the most RAM?
    
-    **stack is consuming all of the ram used by this program**
+    **stack is consuming almost all of the ram used by this program (all but 4bytes)**
 
 3. Bonus: Is there anything that can be done to optimize the usage of ROM or RAM resources? Explain any options.
    
    **Reducing the stack size appears to be a practical way to reduce ram usage.  Reducing worked fine at 64bytes, but became flaky at 32bytes**
+
+   **Increasing optimization did not appear to have any impact on ram usage, but did slightly change ROM usage**
 ## What to turn in and how:
 - Check in all your homework in your repo under the folder “assignment07”.
 - Your folder should contain the following:
@@ -67,4 +69,4 @@
 
 - Submit a link to your GitHub repo assignment:
 
-    o Ex: “https://github.com/<account_id>/embsys310/assignment07”
+    https://github.com/rickhaigh/embsys310/blob/main/assignment07
