@@ -1,0 +1,179 @@
+###############################################################################
+#
+# IAR ELF Linker V8.50.6.265/W32 for ARM                  06/Dec/2020  09:17:13
+# Copyright 2007-2020 IAR Systems AB.
+#
+#    Output file  =
+#        C:\repo\embsys310\assignment06\blinky_asm\Debug\Exe\blinky_asm.out
+#    Map file     =
+#        C:\repo\embsys310\assignment06\blinky_asm\Debug\List\blinky_asm.map
+#    Command line =
+#        -f C:\Users\test\AppData\Local\Temp\EWDB1F.tmp
+#        (C:\repo\embsys310\assignment06\blinky_asm\Debug\Obj\delay.o
+#        C:\repo\embsys310\assignment06\blinky_asm\Debug\Obj\main.o
+#        C:\repo\embsys310\assignment06\blinky_asm\Debug\Obj\rcc_ctrl.o
+#        C:\repo\embsys310\assignment06\blinky_asm\Debug\Obj\user_led.o
+#        --no_out_extension -o
+#        C:\repo\embsys310\assignment06\blinky_asm\Debug\Exe\blinky_asm.out
+#        --redirect _Printf=_PrintfFullNoMb --redirect _Scanf=_ScanfFullNoMb
+#        --map
+#        C:\repo\embsys310\assignment06\blinky_asm\Debug\List\blinky_asm.map
+#        --config "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        8.4\arm\config\linker\ST\stm32l475xG.icf" --semihosting --entry
+#        __iar_program_start --vfe --text_out locale)
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+__dlib_version  = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The basic heap was selected because some modules are built with
+size limitations (and not runtime checking), and --advanced_heap
+was not specified.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at address 0x800'0000 { ro section .intvec };
+"P1":  place in [from 0x0 to 0x0] |
+                [from 0x800'0000 to 0x80f'ffff] { ro };
+define block CSTACK with size = 8K, alignment = 8 { };
+define block PROC_STACK with size = 0, alignment = 8 { };
+define block HEAP with size = 8K, alignment = 8 { };
+"P3":  place in [from 0x2000'0000 to 0x2001'7fff] {
+          rw, block CSTACK, block PROC_STACK, block HEAP };
+
+No sections matched the following patterns:
+
+  ro section application_specific_ro  in "P2|P5"
+  rw                                  in "P3"
+  rw section application_specific_rw  in "P2|P5"
+  section .textrw                     in "P4"
+
+
+  Section   Kind         Address    Size  Object
+  -------   ----         -------    ----  ------
+"A0":                               0x40
+  .intvec   ro code   0x800'0000    0x40  vector_table_M.o [3]
+                    - 0x800'0040    0x40
+
+"P1":                               0xc4
+  .text     ro code   0x800'0040    0x2c  main.o [1]
+  .text     ro code   0x800'006c    0x20  rcc_ctrl.o [1]
+  .text     ro code   0x800'008c    0x18  user_led.o [1]
+  .text     ro code   0x800'00a4     0xa  delay.o [1]
+  .text     ro code   0x800'00ae     0x2  vector_table_M.o [3]
+  .text     ro code   0x800'00b0    0x1e  cmain.o [3]
+  .text     ro code   0x800'00ce     0x4  low_level_init.o [2]
+  .text     ro code   0x800'00d2     0x4  exit.o [2]
+  .text     ro code   0x800'00d8     0xa  cexit.o [3]
+  .text     ro code   0x800'00e4    0x14  exit.o [4]
+  .text     ro code   0x800'00f8     0xc  cstartup_M.o [3]
+                    - 0x800'0104    0xc4
+
+"P3":                             0x2000
+  CSTACK             0x2000'0000  0x2000  <Block>
+    CSTACK  uninit   0x2000'0000  0x2000  <Block tail>
+                   - 0x2000'2000  0x2000
+
+Unused ranges:
+
+         From           To      Size
+         ----           --      ----
+          0x0          0x0       0x1
+   0x800'0104   0x80f'ffff  0xf'fefc
+  0x2000'2000  0x2001'7fff  0x1'6000
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module            ro code  rw data
+    ------            -------  -------
+command line/config:
+    ----------------------------------
+    Total:
+
+C:\repo\embsys310\assignment06\blinky_asm\Debug\Obj: [1]
+    delay.o                10
+    main.o                 44
+    rcc_ctrl.o             32
+    user_led.o             24
+    ----------------------------------
+    Total:                110
+
+dl7M_tln.a: [2]
+    exit.o                  4
+    low_level_init.o        4
+    ----------------------------------
+    Total:                  8
+
+rt7M_tl.a: [3]
+    cexit.o                10
+    cmain.o                30
+    cstartup_M.o           12
+    vector_table_M.o       66
+    ----------------------------------
+    Total:                118
+
+shb_l.a: [4]
+    exit.o                 20
+    ----------------------------------
+    Total:                 20
+
+    Gaps                    4
+    Linker created               8'192
+--------------------------------------
+    Grand Total:          260    8'192
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                     Address  Size  Type      Object
+-----                     -------  ----  ----      ------
+?main                  0x800'00b1        Code  Gb  cmain.o [3]
+CSTACK$$Base          0x2000'0000         --   Gb  - Linker created -
+CSTACK$$Limit         0x2000'2000         --   Gb  - Linker created -
+Region$$Table$$Base           0x0         --   Gb  - Linker created -
+Region$$Table$$Limit          0x0         --   Gb  - Linker created -
+__cmain                0x800'00b1        Code  Gb  cmain.o [3]
+__exit                 0x800'00e5  0x14  Code  Gb  exit.o [4]
+__iar_program_start    0x800'00f9        Code  Gb  cstartup_M.o [3]
+__low_level_init       0x800'00cf   0x4  Code  Gb  low_level_init.o [2]
+__vector_table         0x800'0000        Data  Gb  vector_table_M.o [3]
+_call_main             0x800'00bd        Code  Gb  cmain.o [3]
+_exit                  0x800'00d9        Code  Gb  cexit.o [3]
+_main                  0x800'00cb        Code  Gb  cmain.o [3]
+control_user_led1      0x800'008d        Code  Gb  user_led.o [1]
+delay                  0x800'00a5        Code  Gb  delay.o [1]
+enable_rcc             0x800'006d        Code  Gb  rcc_ctrl.o [1]
+exit                   0x800'00d3   0x4  Code  Gb  exit.o [2]
+main                   0x800'0041  0x2c  Code  Gb  main.o [1]
+
+
+[1] = C:\repo\embsys310\assignment06\blinky_asm\Debug\Obj
+[2] = dl7M_tln.a
+[3] = rt7M_tl.a
+[4] = shb_l.a
+
+    260 bytes of readonly  code memory
+  8'192 bytes of readwrite data memory
+
+Errors: none
+Warnings: none
