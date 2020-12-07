@@ -13,14 +13,19 @@
     b. Define your own vector table as we did during the class.
     
     c. Setup the SysTick timer to trigger an interrupt every 1ms.
-    **
+    
+    **Two functions in main.c setup and handle the SysTick timer: SysTick_Initialize() and SysTick_Handler()**
+
+    **1ms time reference is determined by (SYS_CLOCK_HZ-1)/1000 = 1ms event**
     
     d. Modify the delay() function to be able to accept an input variable indicating the number of milliseconds: void delay(uint32_t delayInMilliseconds)
+
+    **delay_ms function takes a number of milliseconds as the argument and compares this value to the global g_ms_tick which keeps track of the number of ms since it was reset by the delay_ms function**
     
     e. Implement the delay() function to be accurate to one millisecond count (Hint: rely on the SysTick interrupt handler to decrement a global variable used by the delay() function)
 2. Generate the map file for your program and provide details on:
    
-   **assignment07\blinky_cmsis.map**
+    **assignment07\blinky_cmsis.map**
 
     a. How much total ROM your program is occupying?
    
@@ -29,6 +34,8 @@
     b. How much total RAM your program is using?
    
     **8196 bytes, with the stack set to 0x2000 (8192)**
+    
+    **0x4 bytes were used for the global g_ms_tick int**
 
     c. What part of your program is using the most ROM?
    
