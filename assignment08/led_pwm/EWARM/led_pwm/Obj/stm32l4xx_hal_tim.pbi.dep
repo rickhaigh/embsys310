@@ -36,4 +36,6 @@ stm32l4xx_hal_tim.pbi: \
   C:\repo\embsys310\assignment08\led_pwm\EWARM/../Drivers/STM32L4xx_HAL_Driver/Inc\stm32l4xx_hal_pwr.h \
   C:\repo\embsys310\assignment08\led_pwm\EWARM/../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pwr_ex.h \
   C:\repo\embsys310\assignment08\led_pwm\EWARM/../Drivers/STM32L4xx_HAL_Driver/Inc\stm32l4xx_hal_tim.h \
-  C:\repo\embsys310\assignment08\led_pwm\EWARM/../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim_ex.h
+  C:\repo\embsys310\assignment08\led_pwm\EWARM/../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim_ex.h \
+  C:\repo\embsys310\assignment08\led_pwm\EWARM/../Drivers/STM32L4xx_HAL_Driver/Inc\stm32l4xx_hal_uart.h \
+  C:\repo\embsys310\assignment08\led_pwm\EWARM/../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h

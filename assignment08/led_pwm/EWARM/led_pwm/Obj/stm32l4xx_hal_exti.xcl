@@ -21,6 +21,10 @@ C:\repo\embsys310\assignment08\led_pwm\EWARM/../Drivers/CMSIS/Device/ST/STM32L4x
 -I
 C:\repo\embsys310\assignment08\led_pwm\EWARM/../Drivers/CMSIS/Include\
 -I
+C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.4\arm\CMSIS\Core\Include\
+-I
+C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.4\arm\CMSIS\DSP\Include\
+-I
 C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.4\arm\inc
 -I
 C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.4\arm\inc\c
@@ -34,6 +38,10 @@ C:\repo\embsys310\assignment08\led_pwm\Drivers\STM32L4xx_HAL_Driver\Inc\Legacy
 C:\repo\embsys310\assignment08\led_pwm\Drivers\CMSIS\Device\ST\STM32L4xx\Include
 -I
 C:\repo\embsys310\assignment08\led_pwm\Drivers\CMSIS\Include
+-I
+C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.4\arm\CMSIS\Core\Include
+-I
+C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.4\arm\CMSIS\DSP\Include
 -D__CHAR_BITS__=8
 -D__CHAR_MAX__=0xff
 -D__CHAR_MIN__=0

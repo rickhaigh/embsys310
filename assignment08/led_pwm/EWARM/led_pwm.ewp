@@ -121,7 +121,7 @@
         </option>
         <option>
           <name>OGUseCmsis</name>
-          <state>0</state>
+          <state>1</state>
         </option>
         <option>
           <name>OGUseCmsisDspLib</name>
@@ -1074,6 +1074,12 @@
       <group>
         <name>Core</name>
         <file>
+          <name>$PROJ_DIR$\..\Core\Src\print.c</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\..\Core\Inc\print.h</name>
+        </file>
+        <file>
           <name>$PROJ_DIR$\..\Core\Src\main.c</name>
         </file>
         <file>
@@ -1145,6 +1151,12 @@
       </file>
       <file>
         <name>$PROJ_DIR$\..\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_exti.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_uart.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_uart_ex.c</name>
       </file>
     </group>
   </group>

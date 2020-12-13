@@ -22,6 +22,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "print.h"
 #include "stm32l4xx_hal_tim.h"
 #include <stdio.h>
 /* USER CODE END Includes */
@@ -37,6 +38,7 @@
 
 /* Private macro -------------------------------------------------------------*/
 /* USER CODE BEGIN PM */
+PRINT_DEFINEBUFFER();           /* required for lightweight sprintf */
 
 /* USER CODE END PM */
 
@@ -44,10 +46,12 @@
 TIM_HandleTypeDef htim2;
 TIM_HandleTypeDef htim15;
 
+UART_HandleTypeDef huart1;
+
 /* USER CODE BEGIN PV */
 // System clock = 8MHz
 //uint16_t g_tim2_period = 39999;  // 40000 period => 200Hz
-uint32_t g_tim2_period = 65000;  // 65000 period => 123Hz
+uint16_t g_tim2_period = 65000;  // 65000 period => 123Hz
 
 uint16_t g_tim15_period = 65000; // 65000 period => 123Hz
 
@@ -58,6 +62,7 @@ void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_TIM2_Init(void);
 static void MX_TIM15_Init(void);
+static void MX_USART1_UART_Init(void);
 /* USER CODE BEGIN PFP */
 // Custom function used to change PWM duty cycle for specified TIM handle
 void user_pwm_setvalue(TIM_HandleTypeDef *htim,uint16_t value);
@@ -66,6 +71,7 @@ void user_pwm_setvalue(TIM_HandleTypeDef *htim,uint16_t value);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+uint8_t myTxData[] = "EMBSYS310: Assignment08 PWM LED\r\n";
 
 /* USER CODE END 0 */
 
@@ -73,7 +79,6 @@ void user_pwm_setvalue(TIM_HandleTypeDef *htim,uint16_t value);
   * @brief  The application entry point.
   * @retval int
   */
-  //###########################################################################
 int main(void)
 {
   /* USER CODE BEGIN 1 */
@@ -95,59 +100,73 @@ int main(void)
   SystemClock_Config();
 
   /* USER CODE BEGIN SysInit */
-
+  
   /* USER CODE END SysInit */
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_TIM2_Init();
   MX_TIM15_Init();
-  
-/* USER CODE BEGIN 2 */
+  MX_USART1_UART_Init();
+  /* USER CODE BEGIN 2 */
   // Start timer2 and timer15 in PWM mode
   HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1);
   HAL_TIM_PWM_Start(&htim15, TIM_CHANNEL_1);
   
+  HAL_UART_Transmit(&huart1, myTxData, sizeof(myTxData), 10);
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   i = 0;
+  j = 0;
   loop = 0;
-  //printf("i=%d\n",i);
+ 
+  // Print debug information to usart1
+  PrintString("\nloop, i, j\n");  
+  Print_uint32(loop);
+  PrintByte(',');
+  Print_uint32(i);
+  PrintByte(',');
+  Print_uint32(j);
+  PrintString("\n");
+  
   while (1)
   {
     /* USER CODE END WHILE */
-    
+
     /* USER CODE BEGIN 3 */
+      
+      // Duty cycle = ton/tperiod
       
       // LED1 TIM2
       // Adjust up or down step based on whether we have reached max period count
       if (i == g_tim2_period) step = -500;
       if (i == 0) step = 500;
-      i += step;
-      //printf("i=%d\n",i);
-      user_pwm_setvalue(&htim2, i);
+      i += step;  // Increment pulse width by step1
+      user_pwm_setvalue(&htim2, i); // Set new pulse width for LED1
       
       // LED2 TIM15
       // Adjust up or down step based on whether we have reached max period count
       // Use half step so that LED's will not change at same rate
       if (j == g_tim15_period) step2 = -250;
       if (j == 0) step2 = 250;
-      j += step2;
-      //printf("loop=%d\ti=%d\tj=%d\n",loop,i,j);
-      user_pwm_setvalue(&htim15, j);
+      j += step2;  // Increment pulse width by step2
+      
+      // Print debug information to usart1
+      Print_uint32(loop);
+      PrintByte(',');
+      Print_uint32(i);
+      PrintByte(',');
+      Print_uint32(j);
+      PrintString("\n");
+      
+      user_pwm_setvalue(&htim15, j); // Set new pulse width for LED2
       HAL_Delay(5);
       loop++;
 
   }
   /* USER CODE END 3 */
-} //###########################################################################
-
-// User PWM set value function
-void user_pwm_setvalue(TIM_HandleTypeDef *htim, uint16_t value)
-{
-    __HAL_TIM_SET_COMPARE(htim, TIM_CHANNEL_1, value);
 }
 
 /**
@@ -158,6 +177,7 @@ void SystemClock_Config(void)
 {
   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
+  RCC_PeriphCLKInitTypeDef PeriphClkInit = {0};
 
   /** Initializes the RCC Oscillators according to the specified parameters
   * in the RCC_OscInitTypeDef structure.
@@ -180,6 +200,12 @@ void SystemClock_Config(void)
   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
 
   if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_0) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_USART1;
+  PeriphClkInit.Usart1ClockSelection = RCC_USART1CLKSOURCE_SYSCLK;
+  if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInit) != HAL_OK)
   {
     Error_Handler();
   }
@@ -210,6 +236,8 @@ static void MX_TIM2_Init(void)
   /* USER CODE BEGIN TIM2_Init 1 */
   // period count = (1/newFreq)/(1/sysclk)
   // period count = (1/100000)/(1/8MHz) = 80
+  // period count = (1/100)/(1/8HMz)=80000 which will not work since period and pulse need 16bit values max
+  // Max newFreq = 8MHz/2^16 = 123Hz
   
   /* USER CODE END TIM2_Init 1 */
   htim2.Instance = TIM2;
@@ -238,7 +266,7 @@ static void MX_TIM2_Init(void)
     Error_Handler();
   }
   sConfigOC.OCMode = TIM_OCMODE_PWM1;
-  sConfigOC.Pulse = 0;//g_tim2_period/2;
+  sConfigOC.Pulse = 0;
   sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
   sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
   if (HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_1) != HAL_OK)
@@ -301,7 +329,7 @@ static void MX_TIM15_Init(void)
     Error_Handler();
   }
   sConfigOC.OCMode = TIM_OCMODE_PWM1;
-  sConfigOC.Pulse = 0; //g_tim15_period/2;
+  sConfigOC.Pulse = 0;
   sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
   sConfigOC.OCNPolarity = TIM_OCNPOLARITY_HIGH;
   sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
@@ -330,6 +358,41 @@ static void MX_TIM15_Init(void)
 }
 
 /**
+  * @brief USART1 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_USART1_UART_Init(void)
+{
+
+  /* USER CODE BEGIN USART1_Init 0 */
+
+  /* USER CODE END USART1_Init 0 */
+
+  /* USER CODE BEGIN USART1_Init 1 */
+
+  /* USER CODE END USART1_Init 1 */
+  huart1.Instance = USART1;
+  huart1.Init.BaudRate = 115200;
+  huart1.Init.WordLength = UART_WORDLENGTH_8B;
+  huart1.Init.StopBits = UART_STOPBITS_1;
+  huart1.Init.Parity = UART_PARITY_NONE;
+  huart1.Init.Mode = UART_MODE_TX_RX;
+  huart1.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+  huart1.Init.OverSampling = UART_OVERSAMPLING_16;
+  huart1.Init.OneBitSampling = UART_ONE_BIT_SAMPLE_DISABLE;
+  huart1.AdvancedInit.AdvFeatureInit = UART_ADVFEATURE_NO_INIT;
+  if (HAL_UART_Init(&huart1) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN USART1_Init 2 */
+
+  /* USER CODE END USART1_Init 2 */
+
+}
+
+/**
   * @brief GPIO Initialization Function
   * @param None
   * @retval None
@@ -352,7 +415,11 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
-
+// User PWM set value function
+void user_pwm_setvalue(TIM_HandleTypeDef *htim, uint16_t value)
+{
+    __HAL_TIM_SET_COMPARE(htim, TIM_CHANNEL_1, value);
+}
 /* USER CODE END 4 */
 
 /**
