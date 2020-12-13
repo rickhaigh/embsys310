@@ -64,7 +64,7 @@
 
     **startup_stm32l475xx.c** 
 
-    **multiple *.map files showing differences between optomization levels, including one that analyzed the stack**
+    **multiple .map files showing differences between optomization levels, including one that analyzed the stack**
 
     o Turn in answers to questions in markdown file format.
     **assignment07/assignment07.md**
