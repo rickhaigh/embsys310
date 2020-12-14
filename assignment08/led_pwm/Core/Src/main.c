@@ -34,6 +34,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
+#define DEBUG 0
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -123,6 +124,7 @@ int main(void)
   loop = 0;
  
   // Print debug information to usart1
+#if DEBUG
   PrintString("\nloop, i, j\n");  
   Print_uint32(loop);
   PrintByte(',');
@@ -130,7 +132,7 @@ int main(void)
   PrintByte(',');
   Print_uint32(j);
   PrintString("\n");
-  
+#endif  
   while (1)
   {
     /* USER CODE END WHILE */
@@ -154,13 +156,14 @@ int main(void)
       j += step2;  // Increment pulse width by step2
       
       // Print debug information to usart1
+#if DEBUG
       Print_uint32(loop);
       PrintByte(',');
       Print_uint32(i);
       PrintByte(',');
       Print_uint32(j);
       PrintString("\n");
-      
+#endif      
       user_pwm_setvalue(&htim15, j); // Set new pulse width for LED2
       HAL_Delay(5);
       loop++;
@@ -411,6 +414,10 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
+
+  /* EXTI interrupt init*/
+  HAL_NVIC_SetPriority(EXTI15_10_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(EXTI15_10_IRQn);
 
 }
 

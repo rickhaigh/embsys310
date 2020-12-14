@@ -73,6 +73,7 @@ Mcu.Pin2=PB14
 Mcu.Pin3=PB6
 RCC.USART3Freq_Value=8000000
 Mcu.Pin4=PB7
+NVIC.EXTI15_10_IRQn=true\:0\:0\:false\:false\:true\:true\:true
 PB14.Signal=S_TIM15_CH1
 Mcu.Pin5=VP_SYS_VS_Systick
 RCC.PLLSAI2RoutputFreq_Value=16000000
