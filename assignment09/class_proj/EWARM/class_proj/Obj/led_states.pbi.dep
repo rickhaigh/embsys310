@@ -1,0 +1,3 @@
+led_states.pbi: \
+  C:\repo\embsys310\assignment09\class_proj\Core\Src\led_states.c \
+  C:\repo\embsys310\assignment09\class_proj\EWARM/../Core/Inc\led_states.h
